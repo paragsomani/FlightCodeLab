@@ -1,0 +1,125 @@
+/**
+ * 
+ */
+package com.ideas.flight;
+
+import java.util.Set;
+
+/**
+ * @author PARAGS
+ *
+ */
+public class ShortestPath {
+	
+	
+	private Set<Integer> visitedNodes;
+	private Set<Integer> availableNodes;
+	
+	private int neighbourMatrix[][];
+	
+	private int distance[];
+	private int numberOfNodes ;
+	
+	public void shortestPathAlgo()
+	{
+		
+	}
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		ShortestPath shortestPath = new ShortestPath();
+		
+		//Hard coding of number if nodes to 5
+		//TODO: Accept the input from command prompt
+		shortestPath.setNumberOfNodes(5);
+		
+		
+		
+		
+	}
+
+	/**
+	 * @return the visitedNodes
+	 */
+	public Set<Integer> getVisitedNodes() {
+		return visitedNodes;
+	}
+
+	/**
+	 * @param visitedNodes the visitedNodes to set
+	 */
+	public void setVisitedNodes(Set<Integer> visitedNodes) {
+		this.visitedNodes = visitedNodes;
+	}
+
+	/**
+	 * @return the availableNodes
+	 */
+	public Set<Integer> getAvailableNodes() {
+		return availableNodes;
+	}
+
+	/**
+	 * @param availableNodes the availableNodes to set
+	 */
+	public void setAvailableNodes(Set<Integer> availableNodes) {
+		this.availableNodes = availableNodes;
+	}
+
+	/**
+	 * @return the neighbourMatrix
+	 */
+	public int[][] getNeighbourMatrix() {
+		return neighbourMatrix;
+	}
+
+	/**
+	 * @param neighbourMatrix the neighbourMatrix to set
+	 */
+	public void setNeighbourMatrix(int[][] neighbourMatrix) {
+		neighbourMatrix[][]=new int[][]{ 
+									{0,9,6,5,3},
+									{0,0,0,0,0},
+									{0,2,0,4,0},
+									{0,0,0,0,0},
+									{0,0,0,0,0}									
+							};
+		
+		}
+		this.neighbourMatrix = neighbourMatrix;
+	}
+
+	/**
+	 * @return the distance
+	 */
+	public int[] getDistance() {
+		return distance;
+	}
+
+	/**
+	 * @param distance the distance to set
+	 */
+	public void setDistance(int[] distance) {
+		this.distance = distance;
+	}
+
+	/**
+	 * @return the numberOfNodes
+	 */
+	public int getNumberOfNodes() {
+		return numberOfNodes;
+	}
+
+	/**
+	 * @param numberOfNodes the numberOfNodes to set
+	 */
+	public void setNumberOfNodes(int numberOfNodes) {
+		this.numberOfNodes = numberOfNodes;
+	}
+	
+	
+
+}

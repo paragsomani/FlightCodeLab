@@ -1,0 +1,32 @@
+/**
+ * 
+ */
+package com.ideas.flight;
+
+import java.util.Set;
+
+/**
+ * @author PARAGS
+ *
+ */
+public class ShortestPath {
+	
+	
+	private Set<Integer> visitedNodes;
+	private Set<Integer> availableNodes;
+	
+	private int neighbourMatrix[][];
+	
+	private int distance[];
+	private int numberOfNodes ;
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+	}
+	
+	
+
+}

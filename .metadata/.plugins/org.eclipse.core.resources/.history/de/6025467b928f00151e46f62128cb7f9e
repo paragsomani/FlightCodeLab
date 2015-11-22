@@ -1,0 +1,33 @@
+package com.idea.flight.test;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import com.ideas.flight.ShortestPath;
+
+import static org.junit.Assert.assertEquals;
+
+public class TestShortestPath {
+	
+	@Test
+	public void findShortestPath()
+	{
+		ShortestPath shortestPath = new ShortestPath(5);
+		
+		shortestPath.shortestPathAlgo(3, 5);
+		assertEquals(5, shortestPath.printPlanes(3, 5));
+		
+	}
+	
+	@Before
+	public void initialise()
+	{
+		
+		shortestPath.setNumberOfNodes(5);
+		shortestPath.setAvailableNodes(shortestPath.getAvailableNodes());
+		shortestPath.setNeighbourMatrix(shortestPath.getNeighbourMatrix());
+		shortestPath.setPlanes(shortestPath.getPlanes());
+	}
+	
+
+}

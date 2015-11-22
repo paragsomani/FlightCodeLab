@@ -1,0 +1,10 @@
+package com.idea.fligh.test;
+
+import org.junit.runner.RunWith;
+
+
+@RunWith(Suite.class)
+@SuiteClasses({})
+public class AllTests {
+
+}

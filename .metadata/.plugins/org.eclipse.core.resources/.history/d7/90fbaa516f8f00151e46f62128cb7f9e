@@ -1,0 +1,54 @@
+/**
+ * 
+ */
+package com.ideas.flight;
+
+import java.util.Set;
+
+/**
+ * @author PARAGS
+ *
+ */
+public class ShortestPath {
+	
+	
+	private Set<Integer> visitedNodes;
+	private Set<Integer> availableNodes;
+	
+	private int neighbourMatrix[][];
+	
+	private int distance[];
+	private int numberOfNodes ;
+	
+	public void shortestPathAlgo()
+	{
+		
+	}
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		ShortestPath shortestPath = new ShortestPath();
+		shortestPath.setNumberOfNodes(5);
+		
+	}
+
+	/**
+	 * @return the numberOfNodes
+	 */
+	public int getNumberOfNodes() {
+		return numberOfNodes;
+	}
+
+	/**
+	 * @param numberOfNodes the numberOfNodes to set
+	 */
+	public void setNumberOfNodes(int numberOfNodes) {
+		this.numberOfNodes = numberOfNodes;
+	}
+	
+	
+
+}

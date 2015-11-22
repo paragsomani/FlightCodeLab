@@ -1,0 +1,8 @@
+package com.idea.fligh.test;
+
+
+@RunWith(Suite.class)
+@SuiteClasses({})
+public class AllTests {
+
+}

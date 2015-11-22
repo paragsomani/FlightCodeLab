@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testrun name="TestShortestPath" project="FlightShortestPath" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.idea.flight.test.TestShortestPath" time="0.001">
+    <testcase name="findShortestPath" classname="com.idea.flight.test.TestShortestPath" time="0.001"/>
+  </testsuite>
+</testrun>

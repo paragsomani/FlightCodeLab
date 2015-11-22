@@ -1,0 +1,213 @@
+/**
+ * 
+ */
+package com.ideas.flight;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
+/**
+ * @author PARAGS
+ *
+ */
+public class ShortestPath {
+
+	private List<Integer> visitedNodes;
+	private List<Integer> unVisitedNodes;
+	/**
+	 * @return the unVisitedNodes
+	 */
+	public List<String> getUnVisitedNodes() {
+		return unVisitedNodes;
+	}
+
+	/**
+	 * @param unVisitedNodes the unVisitedNodes to set
+	 */
+	public void setUnVisitedNodes(List<Integer> unVisitedNodes) {
+		this.unVisitedNodes = unVisitedNodes;
+	}
+
+	private List<Integer> availableNodes;
+
+	private int neighbourMatrix[][];
+
+	private int distance[];
+	private int numberOfNodes;
+
+	public ShortestPath(int numberOfNodes) {
+		super();
+		this.visitedNodes = new ArrayList<Integer>();
+		this.unVisitedNodes = new ArrayList<Integer>();
+		this.availableNodes = new ArrayList<Integer>();
+		this.neighbourMatrix = new int[numberOfNodes][numberOfNodes];
+		this.distance = new int[numberOfNodes];
+		this.numberOfNodes = numberOfNodes;
+	}
+
+	public void shortestPathAlgo(int startNode, int endNode) {
+		String curNode;
+		int positionOfCurNode = 0;
+		for (int i = 0; i < getAvailableNodes().size(); i++) {
+			Iterator avlItr = getAvailableNodes().iterator();
+			while (avlItr.hasNext()) {
+				// Retrieve one by one node and point it as curNode and once
+				// done add it to visited node set
+				curNode = avlItr.next().toString();
+				System.out.println("Current Node is: " + curNode);
+
+				findMinFlights(curNode, startNode, endNode, positionOfCurNode);
+
+				visitedNodes.add(curNode);
+				positionOfCurNode++;
+			}
+
+		}
+
+	}
+
+	private void findMinFlights(int curNode, int startNode, int endNode, int positionOfCurNode) {
+		//
+		distance[new Integer(startNode)] = 0;
+		//unVisitedNodes
+		for (int i = 0; i < neighbourMatrix.length; i++) {
+
+			for (int j = 0; j < neighbourMatrix[i].length; j++) {
+				if (neighbourMatrix[i][j] != 0) {
+					// System.out.println("Neighbour for "+i+" is: "+(j+1)+" with filights "+ neighbourMatrix[i][j]);
+
+					if (distance[j] > neighbourMatrix[i][j] + (distance[i] == 999 ? 0 : distance[i])) {
+						distance[j] = neighbourMatrix[i][j] + (distance[i] == 999 ? 0 : distance[i]);
+					}
+
+				}
+			}
+		}
+
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		ShortestPath shortestPath = new ShortestPath(5);
+
+		// Hard coding of number if nodes to 5
+		// TODO: Accept the input from command prompt
+		shortestPath.setNumberOfNodes(5);
+		shortestPath.setAvailableNodes(shortestPath.availableNodes);
+		shortestPath.setNeighbourMatrix(shortestPath.neighbourMatrix);
+		shortestPath.setDistance(shortestPath.distance);
+		shortestPath.shortestPathAlgo(3, 5);
+		shortestPath.printDistance();
+
+	}
+
+	public void printDistance() {
+		for (int i = 0; i < getDistance().length; i++) {
+			if (distance[i] != 999)
+				System.out.println("Node " + (i + 1) + " has planes "
+						+ distance[i]);
+		}
+
+	}
+
+	/**
+	 * @return the visitedNodes
+	 */
+	public List<String> getVisitedNodes() {
+		return visitedNodes;
+	}
+
+	/**
+	 * @param visitedNodes
+	 *            the visitedNodes to set
+	 */
+	public void setVisitedNodes(List<String> visitedNodes) {
+		this.visitedNodes = visitedNodes;
+	}
+
+	/**
+	 * @return the availableNodes
+	 */
+	public List<String> getAvailableNodes() {
+		return availableNodes;
+	}
+
+	/**
+	 * @param availableNodes
+	 *            the availableNodes to set
+	 * TODO: change it String, accept input
+	 *            form command prompt
+	 */
+	public void setAvailableNodes(List<String> availableNodes) {
+		availableNodes.add(1);
+		availableNodes.add(2);
+		availableNodes.add(3);
+		availableNodes.add(4);
+		availableNodes.add(5);
+
+		this.availableNodes = availableNodes;
+	}
+
+	/**
+	 * @return the neighbourMatrix
+	 */
+	public int[][] getNeighbourMatrix() {
+		return neighbourMatrix;
+	}
+
+	/**
+	 * @param neighbourMatrix the neighbourMatrix to set 
+	 * TODO: Accept input from command prompt in following format
+	 *            
+	 * 
+	 */
+	public void setNeighbourMatrix(int[][] neighbourMatrix) {
+		neighbourMatrix = new int[][] { { 0, 9, 6, 5, 13 }, 
+										{ 0, 0, 0, 0, 10 },
+										{ 0, 2, 0, 4, 10 }, 
+										{ 0, 0, 0, 0, 1 }, 
+										{ 0, 0, 0, 0, 0 } 
+									  };
+		this.neighbourMatrix = neighbourMatrix;
+	}
+
+	/**
+	 * @return the distance
+	 */
+	public int[] getDistance() {
+		return distance;
+	}
+
+	/**
+	 * @param distance
+	 *            the distance to set
+	 */
+	public void setDistance(int[] distance) {
+
+		// Assumption: 999 is infinite value
+		distance = new int[] { 999, 999, 999, 999, 999 };
+		this.distance = distance;
+	}
+
+	/**
+	 * @return the numberOfNodes
+	 */
+	public int getNumberOfNodes() {
+		return numberOfNodes;
+	}
+
+	/**
+	 * @param numberOfNodes
+	 *            the numberOfNodes to set
+	 */
+	public void setNumberOfNodes(int numberOfNodes) {
+		this.numberOfNodes = numberOfNodes;
+	}
+
+}

@@ -1,0 +1,24 @@
+/**
+ * 
+ */
+package com.ideas.flight;
+
+/**
+ * @author PARAGS
+ *
+ */
+public class ShortestPath {
+	
+	
+	private Set<Integer> visitedNodes;
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+	}
+	
+	
+
+}
