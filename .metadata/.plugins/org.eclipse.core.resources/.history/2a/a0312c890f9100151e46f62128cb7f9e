@@ -42,7 +42,7 @@ public class TestShortestPath {
 		int startNode = 1;
 		int endNode = 5;
 		shortestPath.shortestPathAlgo(startNode, endNode);
-		assertEquals(6, shortestPath.printPlanes(startNode, endNode));
+		assertEquals(5, shortestPath.printPlanes(startNode, endNode));
 	}
 	
 	@Test
